@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant List</title>
+</head>
+<body>
+
+  <h1>Restaurant List</h1>
+
+  <div id="restaurantList"></div>
+
+  <script>
+    // Data from data.js
+    var restaurantsData = {
+      "restaurants": [
+        {
+          "name": "Food Paradise",
+          "cuisines": ["Italian", "Mexican", "Japanese"]
+        },
+        {
+          "name": "Spice Delight",
+          "cuisines": ["Indian", "Thai", "Chinese"]
+        },
+        {
+          "name": "Burger Haven",
+          "cuisines": ["American", "Fast Food"]
+        },
+        {
+          "name": "Sushi Junction",
+          "cuisines": ["Japanese", "Sushi"]
+        },
+        {
+          "name": "Mamma Mia Pizzeria",
+          "cuisines": ["Italian", "Pizza"]
+        }
+      ]
+    };
+
+    // Displaying data on the web page
+    var restaurantListDiv = document.getElementById("restaurantList");
+
+    restaurantsData.restaurants.forEach(function (restaurant) {
+      var restaurantDiv = document.createElement("div");
+      restaurantDiv.innerHTML = "<h2>" + restaurant.name + "</h2><p>Cuisines: " + restaurant.cuisines.join(", ") + "</p>";
+      restaurantListDiv.appendChild(restaurantDiv);
+    });
+  </script>
+
+</body>
+</html>
